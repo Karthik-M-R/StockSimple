@@ -203,7 +203,7 @@ const stockKnowledge = [
         title: "Stop Loss (SL)",
         desc: "An automatic trigger to sell if the price drops too much. Prevents big losses.",
         analogy: "The Eject Button in a fighter jet. If the plane (stock) catches fire, you eject before you crash and burn.",
-        imageUrl: "https://imgs.search.brave.com/mP-Iv2P42CmpUeFo1LFwHoJ3nfVNwJA0fBDdoZuZ2D0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc2/OTkxMTU1L3Bob3Rv/L2NvdXJhZ2VvdXMt/cmlkZXIuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPThhN3Zu/cDd4bHpmN0dfajJX/blpoQWZoQnY1MXdO/RkdUVm5lYS1uXzRo/ZlU9",
+        imageUrl: "https://imgs.search.brave.com/NN2ZQLU1E28LYwysGlKrOcddNuVvIkyt39vtAst6YG8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMTMv/NDI5LzUyNC9zbWFs/bC9jYXBpdGFsLWxv/c3Mtb3ItbG9zaW5n/LW1vbmV5LWZyb20t/aW52ZXN0bWVudC1z/dG9jay1tYXJrZXQt/Z28tZG93bi1vci1k/ZWNsaW5lLXJlY2Vz/c2lvbi1vci1lY29u/b21pYy1zbG93LWRv/d24tc3RvY2stbWFy/a2V0LWNyaXNpcy1j/b25jZXB0LWJyb2tl/LWJ1c2luZXNzbWFu/LWludmVzdG9yLW9u/LXJlZC1kZWNsaW5l/LWdyYXBoLWFuZC1j/aGFydC12ZWN0b3Iu/anBn",
         tip: "Never trade without a Stop Loss. It is your insurance policy."
       },
       {
