@@ -1,10 +1,1 @@
 @import "tailwindcss";
-
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* 👇 ADD THIS BLOCK. It paints the whole browser window. */
-@layer base {
-  body {
-    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-white transition-colors duration-300;
-  }
-}
