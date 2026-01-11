@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* This is the bridge between JS and CSS */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    /* bg-white for light, dark:bg-gray-950 for dark */
+    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-white transition-colors duration-300;
+  }
+}
