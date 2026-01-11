@@ -13,13 +13,10 @@
 // )
 import React from "react"
 import ReactDOM from "react-dom/client"
-import "./index.css";
-import "./App.css"
 
-// TEST MODE: No Router. No Analytics. Just text.
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div style={{ color: 'red', fontSize: '50px', textAlign: 'center', marginTop: '50px' }}>
-    <h1>✅ WEBSITE IS WORKING</h1>
-    <p>The problem is in the Router.</p>
+  <div style={{ backgroundColor: 'yellow', height: '100vh', padding: '50px' }}>
+    <h1 style={{ color: 'black' }}>REACT IS WORKING!</h1>
+    <p>If you see this, the problem is in your Router.jsx or CSS imports.</p>
   </div>
 )
