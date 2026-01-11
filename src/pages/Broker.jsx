@@ -1,0 +1,63 @@
+import React from 'react';
+import { brokerData } from '../data/brokers'; // Adjust path if needed
+import BrokerCard from '../components/BrokerCard';
+import { ShieldCheck, TrendingUp, HelpCircle } from 'lucide-react';
+
+function Brokers() {
+  return (
+    // 🌙 FIX 1: Page Background & Transition
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-gray-950 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* 1. PAGE HEADER */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          {/* Badge: Blue-100 (Light) -> Blue-900 (Dark) */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-6 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+            <ShieldCheck className="w-4 h-4" /> 100% Unbiased Comparison
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-white">
+            Best Stock Brokers in <span className="text-blue-600 dark:text-blue-500">India (2026)</span>
+          </h1>
+          
+          <p className="text-lg leading-relaxed text-slate-600 dark:text-gray-400">
+            Don't let hidden fees eat your profits. We compared the top 8 brokers on brokerage, app speed, and hidden charges to help you decide.
+          </p>
+        </div>
+
+        {/* 2. MAIN GRID (THE CARDS) */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-10">
+          {brokerData.map((broker) => (
+            <BrokerCard key={broker.id} data={broker} />
+          ))}
+        </div>
+
+        {/* 3. TRUST/DISCLAIMER FOOTER */}
+        <div className="mt-20 border-t pt-10 text-center border-slate-200 dark:border-gray-800">
+          
+          {/* 🌙 FIX 2: Dark Mode for the Disclaimer Box */}
+          <div className="inline-block p-4 rounded-xl shadow-sm max-w-2xl bg-white border border-slate-100 dark:bg-gray-900 dark:border-gray-800">
+            <div className="flex items-start gap-3">
+              <HelpCircle className="w-5 h-5 mt-0.5 flex-shrink-0 text-slate-400 dark:text-gray-500" />
+              <div className="text-left">
+                <h4 className="text-sm font-bold mb-1 text-slate-700 dark:text-gray-200">
+                  How do we rank these?
+                </h4>
+                <p className="text-xs leading-relaxed text-slate-500 dark:text-gray-400">
+                  We rank brokers based on 4 factors: Reliability (Uptime), Cost (Hidden Charges), App UI, and Customer Support. 
+                  <span className="italic ml-1 opacity-75">
+                    Note: If you open an account via our links, we may earn a small referral fee at no extra cost to you. This keeps StockSimple free.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+export default Brokers;
