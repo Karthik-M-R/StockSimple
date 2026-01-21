@@ -10,22 +10,62 @@ function IPOs() {
   // 🧠 THE IPO BRAIN (Heuristic Engine)
   // Scans headlines for IPO-specific keywords
   // ===============================================
+  
+  /**
+   * analyzeIPO Function - Sentiment Analysis Algorithm
+   * 
+   * INTERVIEW CONCEPTS:
+   * - Heuristic Algorithm: Rule-based pattern matching
+   * - String Manipulation: toLowerCase(), includes()
+   * - Conditional Logic: if-else chains for decision making
+   * - Array Operations: push() to build tags array
+   * - Early Returns: Multiple exit points based on conditions
+   * 
+   * WHY HEURISTIC INSTEAD OF ML?
+   * - Simple, fast, no training data needed
+   * - Good enough for MVP/demo
+   * - ML would be better for production (more accurate)
+   * 
+   * INTERVIEW Q: How would you improve this?
+   * A: Use NLP library, machine learning, or sentiment analysis API
+   * 
+   * @param {string} title - News article headline
+   * @returns {Object} - {sentiment, tags, insight}
+   */
   const analyzeIPO = (title) => {
+    // NORMALIZE INPUT
+    // Convert to lowercase for case-insensitive matching
+    // INTERVIEW Q: Why toLowerCase()?
+    // A: Makes matching case-insensitive ("GMP" = "gmp" = "Gmp")
     const t = title.toLowerCase();
+    
+    // INITIALIZE DEFAULT VALUES
+    // These will be modified based on keyword detection
     let sentiment = "Neutral";
     let tags = [];
     let insight = "General IPO news update.";
 
     // 1. CHECK FOR GMP (Grey Market Premium)
+    // GMP is a key indicator of IPO demand
+    // INTERVIEW Q: What is GMP?
+    // A: Grey Market Premium - unofficial price before listing, indicates demand
     if (t.includes("gmp") || t.includes("grey market") || t.includes("premium")) {
-      tags.push("GMP");
+      tags.push("GMP"); // Add tag for categorization
+      
+      // POSITIVE GMP SIGNALS
+      // Keywords indicating rising GMP (bullish)
       if (t.includes("jump") || t.includes("rise") || t.includes("high") || t.includes("surge")) {
         sentiment = "Hot";
         insight = "Grey Market Premium is rising. Listing gain expected.";
-      } else if (t.includes("fall") || t.includes("drop") || t.includes("discount") || t.includes("weak")) {
+      } 
+      // NEGATIVE GMP SIGNALS
+      // Keywords indicating falling GMP (bearish)
+      else if (t.includes("fall") || t.includes("drop") || t.includes("discount") || t.includes("weak")) {
         sentiment = "Cold";
         insight = "GMP is falling. Listing might be flat or negative.";
-      } else {
+      } 
+      // NEUTRAL GMP MENTION
+      else {
         insight = "Check latest GMP rates before applying.";
       }
     }
